@@ -23,6 +23,7 @@ const DeviceForm: React.FC = () => {
   const [voltage, setVoltage] = useState(existing?.voltage.toString() || "");
   const [current, setCurrent] = useState(existing?.current.toString() || "");
   const [showConfirm, setShowConfirm] = useState(false);
+  const showToast = useToast();
 
   useEffect(() => {
     if (mode === "edit" && !existing) {
@@ -129,13 +130,13 @@ const DeviceForm: React.FC = () => {
           </button>
         </div>
       </form>
+      <ConfirmModal
+        isOpen={showConfirm}
+        message="Delete this device? This cannot be undone."
+        onConfirm={confirmDelete}
+        onCancel={cancelDelete}
+      />
     </div>
-    <ConfirmModal
-      isOpen={showConfirm}
-      message="Delete this device? This cannot be undone."
-      onConfirm={confirmDelete}
-      onCancel={cancelDelete}
-    />
   );
 };
 
