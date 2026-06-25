@@ -1,6 +1,10 @@
 {
   "name": "contactor-dashboard",
   "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,11 +15,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "chart.js": "^4.4.0",
-    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
-    "@types/react-router-dom": "^6.22.0"
+    "chart.js": "^4.4.0",
+    "react-chartjs-2": "^5.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
