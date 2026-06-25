@@ -26,14 +26,65 @@ const App: React.FC = () => {
             <BrowserRouter>
               <div className="min-h-screen bg-gradient-to-br from-gray-900 to-indigo-900 text-white">
                 <nav className="bg-black bg-opacity-30 backdrop-blur-md p-4 flex flex-wrap gap-4 justify-center">
-                  <NavLink to="/" end className={({ isActive }) => isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"}>Dashboard</NavLink>
-                  <NavLink to="/devices" className={({ isActive }) => isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"}>Devices</NavLink>
-                  <NavLink to="/devices/new" className={({ isActive }) => isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"}>Add Device</NavLink>
-                  <NavLink to="/maintenance" className={({ isActive }) => isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"}>Maintenance</NavLink>
-                  <NavLink to="/reports" className={({ isActive }) => isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"}>Reports</NavLink>
-                  <NavLink to="/settings" className={({ isActive }) => isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"}>Settings</NavLink>
-                  <NavLink to="/alerts" className={({ isActive }) => isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"}>Alert Log</NavLink>
+                  <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) =>
+                      isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"
+                    }
+                  >
+                    Dashboard
+                  </NavLink>
+                  <NavLink
+                    to="/devices"
+                    className={({ isActive }) =>
+                      isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"
+                    }
+                  >
+                    Devices
+                  </NavLink>
+                  <NavLink
+                    to="/devices/new"
+                    className={({ isActive }) =>
+                      isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"
+                    }
+                  >
+                    Add Device
+                  </NavLink>
+                  <NavLink
+                    to="/maintenance"
+                    className={({ isActive }) =>
+                      isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"
+                    }
+                  >
+                    Maintenance
+                  </NavLink>
+                  <NavLink
+                    to="/reports"
+                    className={({ isActive }) =>
+                      isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"
+                    }
+                  >
+                    Reports
+                  </NavLink>
+                  <NavLink
+                    to="/settings"
+                    className={({ isActive }) =>
+                      isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"
+                    }
+                  >
+                    Settings
+                  </NavLink>
+                  <NavLink
+                    to="/alerts"
+                    className={({ isActive }) =>
+                      isActive ? "text-indigo-300 font-semibold" : "hover:text-indigo-200"
+                    }
+                  >
+                    Alert Log
+                  </NavLink>
                 </nav>
+
                 <main className="p-6">
                   <Routes>
                     <Route path="/" element={<Dashboard />} />
@@ -49,6 +100,7 @@ const App: React.FC = () => {
                   </Routes>
                 </main>
               </div>
+
               <ToastContainer />
             </BrowserRouter>
           </DeviceProvider>
