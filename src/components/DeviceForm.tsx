@@ -43,10 +43,10 @@ const DeviceForm: React.FC = () => {
     const payload = { name, status, voltage: v, current: c } as Omit<Device, "id">;
     if (mode === "add") {
       addDevice(payload);
-      showToast('Device added', 'success');
+      showToast("Device added", "success");
     } else if (id) {
       updateDevice(id, payload);
-      showToast('Device updated', 'success');
+      showToast("Device updated", "success");
     }
     navigate("/devices");
   };
@@ -58,7 +58,7 @@ const DeviceForm: React.FC = () => {
   const confirmDelete = () => {
     if (id) {
       removeDevice(id);
-      showToast('Device deleted', 'success');
+      showToast("Device deleted", "success");
       navigate("/devices");
     }
   };
@@ -72,6 +72,7 @@ const DeviceForm: React.FC = () => {
       <h2 className="text-2xl font-bold mb-4">
         {mode === "add" ? "Add New Device" : "Edit Device"}
       </h2>
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block mb-1">Name</label>
@@ -82,6 +83,7 @@ const DeviceForm: React.FC = () => {
             required
           />
         </div>
+
         <div>
           <label className="block mb-1">Status</label>
           <select
@@ -96,6 +98,7 @@ const DeviceForm: React.FC = () => {
             ))}
           </select>
         </div>
+
         <div>
           <label className="block mb-1">Voltage (V)</label>
           <input
@@ -106,6 +109,7 @@ const DeviceForm: React.FC = () => {
             required
           />
         </div>
+
         <div>
           <label className="block mb-1">Current (A)</label>
           <input
@@ -116,20 +120,35 @@ const DeviceForm: React.FC = () => {
             required
           />
         </div>
+
         <div className="flex space-x-4">
-          <button type="submit" className="px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-500 transition">
+          <button
+            type="submit"
+            className="px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-500 transition"
+          >
             {mode === "add" ? "Create" : "Save"}
           </button>
+
           {mode === "edit" && (
-            <button type="button" onClick={handleDelete} className="px-4 py-2 bg-red-600 rounded hover:bg-red-500 transition">
+            <button
+              type="button"
+              onClick={handleDelete}
+              className="px-4 py-2 bg-red-600 rounded hover:bg-red-500 transition"
+            >
               Delete
             </button>
           )}
-          <button type="button" onClick={() => navigate("/devices")} className="px-4 py-2 bg-gray-600 rounded hover:bg-gray-500 transition">
+
+          <button
+            type="button"
+            onClick={() => navigate("/devices")}
+            className="px-4 py-2 bg-gray-600 rounded hover:bg-gray-500 transition"
+          >
             Cancel
           </button>
         </div>
       </form>
+
       <ConfirmModal
         isOpen={showConfirm}
         message="Delete this device? This cannot be undone."
